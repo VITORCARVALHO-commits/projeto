@@ -2,13 +2,36 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+
 }
+:root {
+  --text-color: white;
+  --bg-url:  url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255,255,255,0.05);
+  --surface-color-hover: rgba(0,0,0,0.2);
+  --highlight-color: rgba(255,255,255,0.2);
+
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0,0,0,0.05);
+  --surface-color-hover: rgba(0,0,0,0.2);
+  --highlight-color: rgba(0,0,0,0.1);
+
+
+}
+
 body {
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
 }
 body * {
   font-family: "inter", sans-serif;
-  color: #ffff;
+  color: var(--text-color);
 }
 #container {
   width: 360px;
@@ -40,8 +63,8 @@ ul li a {
   align-items: center;
 
   padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
   border-radius: 8px;
   backdrop-filter: blur(4px);
   text-decoration: none;
@@ -51,8 +74,8 @@ ul li a {
 }
 /* chamado pseudo selector */
 ul li a:hover {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1.5px solid white;
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
 }
 /*social links*/
 #social-links {
@@ -71,7 +94,7 @@ ul li a:hover {
 }
 /* pseudo selector */
 #social-links a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--highlight-color)
 }
 #footer {
   padding: 24px 0;
